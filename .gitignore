@@ -4,6 +4,8 @@
 .idea/
 *.iml
 out/
+.vscode/
+
 
 # Maven
 target/
