@@ -22,7 +22,7 @@ public class Dealer {
      * 
      * @return a pokerlike game
      */
-    private PokerLikeGame setUpPokerGame() {
+    public PokerLikeGame setUpPokerGame() {
         DeckOfCards deck = new DeckOfCards();
         PokerLikeGame game = new PokerLikeGame();
         for (int i = 0; i < 5; i++) {

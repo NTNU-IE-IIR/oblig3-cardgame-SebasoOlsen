@@ -47,19 +47,17 @@ public class DeckOfCards {
 
     /**
      * Returns a random card from the deck.
-     * 
+     * Removes the card from the deck.
      *
-     * @param cardsToExlude cards to exclude from the random selection
      * @return a random card from the deck
      */
-    //public PlayingCard getRandomCard(PlayingCard[] cardsToExlude) {
-    //    Random random = new Random();
-    //    PlayingCard randomCard = null;
-    //    do {
-    //        int randomSuitIndex = random.nextInt(suits.length);
-    //        int randomFaceIndex = random.nextInt(faces.length);
-    //        randomCard = deck.get(suits[randomSuitIndex] + "" + faces[randomFaceIndex]);
-    //    } while (cardsToExclude.contains(randomCard));
-    //    return randomCard;
-    // }
+    public PlayingCard getRandomCard() {
+        Random random = new Random();
+        Object[] keys = deck.keySet().toArray();
+        String randomKey = (String) keys[random.nextInt(keys.length)];
+        PlayingCard card = deck.get(randomKey);
+        deck.remove(randomKey);
+        return card;
+    }
+
 }
