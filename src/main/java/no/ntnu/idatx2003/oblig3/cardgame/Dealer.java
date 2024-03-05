@@ -9,17 +9,26 @@ package no.ntnu.idatx2003.oblig3.cardgame;
  */
 public class Dealer {
 
-    
+    /**
+     * Creates a new instance of a dealer.
+     */
+    public Dealer() {
+    }
 
     /**
-     * Returns a hand with random cards from a deck
+     * Returns a pokerlike filled with cards form a deck of cards.
      * 
-     * @return
+     * 
+     * 
+     * @return a pokerlike game
      */
-    //private Hand fillHandFromDeck(Hand handToDeal, DeckOfCards deckToDealFrom) {
-//
-    //    handToDeal.addCard(deckToDealFrom.getRandomCard());
-    //    
-    //    return handToDeal;
-    //}
-}//
+    private PokerLikeGame setUpPokerGame() {
+        DeckOfCards deck = new DeckOfCards();
+        PokerLikeGame game = new PokerLikeGame();
+        for (int i = 0; i < 5; i++) {
+            game.addCard(deck.getRandomCard());
+        }
+        return game;
+    }
+
+}

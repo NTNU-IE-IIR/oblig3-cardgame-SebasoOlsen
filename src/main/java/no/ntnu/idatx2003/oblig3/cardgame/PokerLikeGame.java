@@ -3,10 +3,21 @@ package no.ntnu.idatx2003.oblig3.cardgame;
 import java.util.HashMap;
 
 /**
- * Represents a hand of cards.
+ * Represents a poker-like game.
+ * A poker-like game has a hand of cards, and the hand is represented by a HashMap where the key is a combination of the suit and face of the card, and the value is the card itself.
+ * 
+ * <p> The following functions are implemented:
+ * <ul>
+ * <li>addCard</li>
+ * <li>getSumOfFaces</li>
+ * <li>hasQueenOfSpades</li>
+ * <li>getHearts</li>
+ * <li>isFlush</li>
+ * </ul>
+ * 
  * 
  */
-public class Hand {
+public class PokerLikeGame {
     
     private HashMap<String, PlayingCard> hand;
 
@@ -14,15 +25,14 @@ public class Hand {
      * Creates an instance of a hand of cards.
      * Each hand has 5 cards.
      */
-    public Hand(PlayingCard playingCard1, PlayingCard playingCard2, PlayingCard playingCard3, PlayingCard playingCard4, PlayingCard playingCard5) {
-        hand = new HashMap<String, PlayingCard>();
-        this.hand.put(playingCard1.getAsString(), playingCard1);
-        this.hand.put(playingCard2.getAsString(), playingCard2);
-        this.hand.put(playingCard3.getAsString(), playingCard3);
-        this.hand.put(playingCard4.getAsString(), playingCard4);
-        this.hand.put(playingCard5.getAsString(), playingCard5);
+    public PokerLikeGame() {
+        this.hand = new HashMap<String, PlayingCard>();
     }
 
+
+    public void addCard(PlayingCard playingCard1) {
+        this.hand.put(playingCard1.getAsString(), playingCard1);
+    }
     /**
      * Gets the sum of all faces in the hand.
      */
