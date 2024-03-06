@@ -9,6 +9,9 @@ package no.ntnu.idatx2003.oblig3.cardgame;
  */
 public class Dealer {
 
+    private PokerLikeGame game;
+    private DeckOfCards deck;
+
     /**
      * Creates a new instance of a dealer.
      */
@@ -18,17 +21,42 @@ public class Dealer {
     /**
      * Returns a pokerlike filled with cards form a deck of cards.
      * 
-     * 
-     * 
      * @return a pokerlike game
      */
-    public PokerLikeGame setUpPokerGame() {
-        DeckOfCards deck = new DeckOfCards();
-        PokerLikeGame game = new PokerLikeGame();
+    public void setUpPokerGame() {
+        this.deck = new DeckOfCards();
+        this.game = new PokerLikeGame();
         for (int i = 0; i < 5; i++) {
             game.addCard(deck.getRandomCard());
         }
-        return game;
     }
 
+    /**
+     * Returns true if the hand has the card Queen of Spades, false otherwise.
+     */
+    public boolean hasQueenOfSpades() {
+        return game.hasQueenOfSpades();
+    }
+
+    /**
+     * Returns the sum of all faces in the hand.
+     */
+    public int getSumOfFaces() {
+        return game.getSumOfFaces();
+    }
+
+    /**
+     * Returns the suit and face of every heart card in the hand.
+     * If no hand has no hearts, "No hearts" is returned.
+     */
+    public String getHearts() {
+        return game.getHearts();
+    }
+
+    /**
+     * Returns true if the hand is a flush, false otherwise.
+     */
+    public boolean isFlush() {
+        return game.isFlush();
+    }
 }
