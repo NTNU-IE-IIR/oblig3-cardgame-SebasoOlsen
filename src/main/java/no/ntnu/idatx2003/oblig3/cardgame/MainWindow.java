@@ -25,6 +25,7 @@ public class MainWindow extends Application{
         BorderPane rootNode = new BorderPane();
 
         FlowPane centerContainer = new FlowPane();
+        centerContainer.setStyle("-fx-background-color: #00ff00;");
         centerContainer.setAlignment(Pos.CENTER);
         rootNode.setCenter(centerContainer);
 
