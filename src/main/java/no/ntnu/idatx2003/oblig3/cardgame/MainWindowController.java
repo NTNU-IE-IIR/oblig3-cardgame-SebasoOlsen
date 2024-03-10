@@ -26,4 +26,14 @@ public class MainWindowController{
         dealer.setUpPokerGame();
     }
     
+    /**
+     * Handle the "Check Hand" action.
+     * 
+     */
+    public void check() {
+        boolean hasQueenOfSpades = dealer.hasQueenOfSpades();
+        int sumOfFaces = dealer.getSumOfFaces();
+        String hearts = dealer.getHearts();
+        boolean isFlush = dealer.isFlush();
+    }
 }
