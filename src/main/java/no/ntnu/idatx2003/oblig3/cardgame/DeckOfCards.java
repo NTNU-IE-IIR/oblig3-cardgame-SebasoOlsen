@@ -53,10 +53,10 @@ public class DeckOfCards {
      */
     public PlayingCard getRandomCard() {
         Random random = new Random();
-        Object[] keys = deck.keySet().toArray();
+        String[] keys = (String[]) deck.keySet().toArray();
         String randomKey = (String) keys[random.nextInt(keys.length)];
         PlayingCard card = deck.get(randomKey);
-        deck.remove(randomKey);
+        this.deck.remove(randomKey);
         return card;
     }
 
