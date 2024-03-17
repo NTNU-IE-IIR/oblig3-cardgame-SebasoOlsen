@@ -6,9 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 /**
@@ -58,57 +61,69 @@ public class MainWindow extends Application{
         this.Card5 = new Label("E5");
         centerContainer.getChildren().add(this.Card5);
 
-        HBox bottomContainer = new HBox();
-        bottomContainer.setStyle("-fx-background-color: #ff0000;");
-        bottomContainer.setAlignment(Pos.BOTTOM_CENTER);
-        rootNode.setBottom(bottomContainer);
+        GridPane bottomGridPane = new GridPane();
+        bottomGridPane.setStyle("-fx-background-color: #ff0000;");
+        rootNode.setBottom(bottomGridPane);
+        bottomGridPane.setStyle("-fx-background-color: white; -fx-grid-lines-visible: true");
 
-        GridPane bottomButtonsContainer = new GridPane();
-        bottomButtonsContainer.setAlignment(Pos.CENTER_LEFT);
-        bottomButtonsContainer.setStyle("-fx-background-color: #0000ff;");
-        bottomContainer.getChildren().add(bottomButtonsContainer);
-
+        ColumnConstraints col1 = new ColumnConstraints();
+        col1.setHgrow(Priority.ALWAYS);
+        bottomGridPane.getColumnConstraints().add(col1);
         
+
+        RowConstraints row1 = new RowConstraints();
+        row1.setVgrow(Priority.ALWAYS);
+        bottomGridPane.getRowConstraints().add(row1);
 
         Button dealButton = new Button("Deal Hand");
         dealButton.setOnAction(e -> controller.deal());
-        bottomButtonsContainer.getChildren().add(dealButton);
-        bottomButtonsContainer.setConstraints(dealButton, 0, 0);
+        bottomGridPane.getChildren().add(dealButton);
+        bottomGridPane.setConstraints(dealButton, 0, 0);
 
         Button checkButton = new Button("Check Hand");
         checkButton.setOnAction(e -> controller.check());
-        bottomButtonsContainer.getChildren().add(checkButton);
-        bottomButtonsContainer.setConstraints(checkButton, 0, 3);
+        bottomGridPane.getChildren().add(checkButton);
+        bottomGridPane.setConstraints(checkButton, 0, 1);
+
+        HBox heartsBox = new HBox();
+        heartsBox.setMinSize(200, 0);
+        bottomGridPane.getChildren().add(heartsBox);
+        bottomGridPane.setConstraints(heartsBox, 1, 0);
+
+        HBox queenOfSpadesBox = new HBox();
+        queenOfSpadesBox.setMinSize(200, 0);
+        bottomGridPane.getChildren().add(queenOfSpadesBox);
+        bottomGridPane.setConstraints(queenOfSpadesBox, 1, 1);
+
+        HBox sumOfFacesBox = new HBox();
+        sumOfFacesBox.setMinSize(200, 0);
+        bottomGridPane.getChildren().add(sumOfFacesBox);
+        bottomGridPane.setConstraints(sumOfFacesBox, 2, 0);
+
+        HBox flushBox = new HBox();
+        flushBox.setMinSize(200, 0);
+        bottomGridPane.getChildren().add(flushBox);
+        bottomGridPane.setConstraints(flushBox, 2, 1);
 
         Label heartsLabel = new Label("Hearts: ");
         this.Hearts = new Label("-");
-        bottomButtonsContainer.getChildren().add(heartsLabel);
-        bottomButtonsContainer.getChildren().add(this.Hearts);
-        bottomButtonsContainer.setConstraints(heartsLabel, 3, 0);
-        bottomButtonsContainer.setConstraints(this.Hearts, 4, 0);
+        heartsBox.getChildren().add(heartsLabel);
+        heartsBox.getChildren().add(this.Hearts);
 
         Label queenOfSpadesLabel = new Label("Queen of Spades: ");
         this.QueenOfSpades = new Label("-");
-        bottomButtonsContainer.getChildren().add(queenOfSpadesLabel);
-        bottomButtonsContainer.getChildren().add(this.QueenOfSpades);
-        bottomButtonsContainer.setConstraints(queenOfSpadesLabel, 3, 1);
-        bottomButtonsContainer.setConstraints(this.QueenOfSpades, 4,1);
+        queenOfSpadesBox.getChildren().add(queenOfSpadesLabel);
+        queenOfSpadesBox.getChildren().add(this.QueenOfSpades);
 
         Label sumOfFacesLabel = new Label("Sum of Faces: ");
         this.SumOfFaces = new Label("-");
-        bottomButtonsContainer.getChildren().add(sumOfFacesLabel);
-        bottomButtonsContainer.getChildren().add(this.SumOfFaces);
-        bottomButtonsContainer.setConstraints(sumOfFacesLabel, 3, 2);
-        bottomButtonsContainer.setConstraints(this.SumOfFaces, 4, 2);
+        sumOfFacesBox.getChildren().add(sumOfFacesLabel);
+        sumOfFacesBox.getChildren().add(this.SumOfFaces);
 
         Label flushLabel = new Label("Flush: ");
         this.Flush = new Label("-");
-        bottomButtonsContainer.getChildren().add(flushLabel);
-        bottomButtonsContainer.getChildren().add(this.Flush);
-        bottomButtonsContainer.setConstraints(flushLabel, 3, 3);
-        bottomButtonsContainer.setConstraints(this.Flush, 4, 3);
-
-
+        flushBox.getChildren().add(flushLabel);
+        flushBox.getChildren().add(this.Flush);
 
         stage.setScene(new Scene(rootNode, 800, 600));
         stage.setTitle("Card Game");
