@@ -1,5 +1,6 @@
 package no.ntnu.idatx2003.oblig3.cardgame;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -53,8 +54,9 @@ public class DeckOfCards {
      */
     public PlayingCard getRandomCard() {
         Random random = new Random();
-        String[] keys = (String[]) deck.keySet().toArray();
-        String randomKey = (String) keys[random.nextInt(keys.length)];
+        Object[] keyObjects = deck.keySet().toArray(); // Get the keys as an array of objects
+        String[] keys = Arrays.copyOf(keyObjects, keyObjects.length, String[].class); // Convert to an array of strings
+        String randomKey = keys[random.nextInt(keys.length)];
         PlayingCard card = deck.get(randomKey);
         this.deck.remove(randomKey);
         return card;

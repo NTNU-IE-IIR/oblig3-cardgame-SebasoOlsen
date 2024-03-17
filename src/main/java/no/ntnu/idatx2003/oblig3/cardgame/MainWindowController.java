@@ -24,8 +24,13 @@ public class MainWindowController{
      */
     public void deal() {
         dealer.setUpPokerGame();
+        int index = 1;
+        for (PlayingCard card : dealer.getGame().getHand().values()) {
+            mainWindow.setCard(card, index);
+            index++;
+        }
     }
-    
+
     /**
      * Handle the "Check Hand" action.
      * 

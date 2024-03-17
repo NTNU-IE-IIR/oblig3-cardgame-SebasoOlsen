@@ -59,4 +59,14 @@ public class Dealer {
     public boolean isFlush() {
         return game.isFlush();
     }
+
+    /**
+     * Returns the game.
+     * 
+     * @return the game
+     */
+    public PokerLikeGame getGame() {
+        return game;
+    }
+    
 }

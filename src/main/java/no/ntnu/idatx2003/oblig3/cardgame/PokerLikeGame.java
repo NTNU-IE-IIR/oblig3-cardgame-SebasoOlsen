@@ -88,4 +88,9 @@ public class PokerLikeGame {
         }
         return true;
     }
+
+    public HashMap<String, PlayingCard> getHand() {
+        return hand;
+    }
+    
 }

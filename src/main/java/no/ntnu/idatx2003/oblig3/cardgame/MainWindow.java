@@ -54,6 +54,7 @@ public class MainWindow extends Application{
 
         this.Card3 = new Label("C3");
         centerContainer.getChildren().add(this.Card3);
+        this.Card3.setText("A1");
 
         this.Card4 = new Label("D4");
         centerContainer.getChildren().add(this.Card4);
@@ -132,5 +133,25 @@ public class MainWindow extends Application{
 
     public static void appMain(String[] args) {
         launch(args);
+    }
+
+    public void setCard(PlayingCard card, int index) {
+        switch(index) {
+            case 1:
+                this.Card1.setText(card.getAsString());
+                break;
+            case 2:
+                this.Card2.setText(card.getAsString());
+                break;
+            case 3:
+                this.Card3.setText(card.getAsString());
+                break;
+            case 4:
+                this.Card4.setText(card.getAsString());
+                break;
+            case 5:
+                this.Card5.setText(card.getAsString());
+                break;
+        }
     }
 }
