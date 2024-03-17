@@ -36,9 +36,9 @@ public class MainWindowController{
      * 
      */
     public void check() {
-        boolean hasQueenOfSpades = dealer.hasQueenOfSpades();
-        int sumOfFaces = dealer.getSumOfFaces();
-        String hearts = dealer.getHearts();
-        boolean isFlush = dealer.isFlush();
+        mainWindow.setHearts(dealer.getHearts());
+        mainWindow.setQueenOfSpades(dealer.hasQueenOfSpades());
+        mainWindow.setSumOfFaces(dealer.getSumOfFaces());
+        mainWindow.setFlush(dealer.isFlush());
     }
 }

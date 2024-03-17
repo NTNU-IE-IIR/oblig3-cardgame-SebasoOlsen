@@ -154,4 +154,21 @@ public class MainWindow extends Application{
                 break;
         }
     }
+
+    public void setHearts(String hearts) {
+        this.Hearts.setText(hearts);
+    }
+
+    public void setQueenOfSpades(boolean hasQueenOfSpades) {
+        this.QueenOfSpades.setText(hasQueenOfSpades ? "Yes" : "No");
+    }
+
+    public void setSumOfFaces(int sumOfFaces) {
+        this.SumOfFaces.setText(Integer.toString(sumOfFaces));
+    }
+
+    public void setFlush(boolean isFlush) {
+        this.Flush.setText(isFlush ? "Yes" : "No");
+    }
+    
 }

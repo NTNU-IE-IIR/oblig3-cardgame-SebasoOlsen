@@ -51,6 +51,8 @@ public class DeckOfCards {
      * Removes the card from the deck.
      *
      * @return a random card from the deck
+     * 
+     * This code was written by AI.
      */
     public PlayingCard getRandomCard() {
         Random random = new Random();
