@@ -54,7 +54,6 @@ public class MainWindow extends Application{
 
         this.Card3 = new Label("C3");
         centerContainer.getChildren().add(this.Card3);
-        this.Card3.setText("A1");
 
         this.Card4 = new Label("D4");
         centerContainer.getChildren().add(this.Card4);
@@ -63,7 +62,6 @@ public class MainWindow extends Application{
         centerContainer.getChildren().add(this.Card5);
 
         GridPane bottomGridPane = new GridPane();
-        bottomGridPane.setStyle("-fx-background-color: #ff0000;");
         rootNode.setBottom(bottomGridPane);
         bottomGridPane.setStyle("-fx-background-color: white; -fx-grid-lines-visible: true");
 
