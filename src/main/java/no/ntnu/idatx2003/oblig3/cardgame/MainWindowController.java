@@ -24,7 +24,7 @@ public class MainWindowController{
      */
     public void deal() {
         dealer.setUpPokerGame();
-        int index = 1;
+        int index = 0;
         for (PlayingCard card : dealer.getGame().getHand().values()) {
             mainWindow.setCard(card, index);
             index++;

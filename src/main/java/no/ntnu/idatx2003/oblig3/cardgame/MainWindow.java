@@ -41,25 +41,34 @@ public class MainWindow extends Application{
         BorderPane rootNode = new BorderPane();
 
         FlowPane centerContainer = new FlowPane();
-        centerContainer.setStyle("-fx-background-color: #00ff00;");
+        centerContainer.setStyle("-fx-background-color: #27b00b;");
         centerContainer.setAlignment(Pos.CENTER);
         rootNode.setCenter(centerContainer);
-        centerContainer.setHgap(20);
 
-        this.Card1 = new Label("A1");
+        this.Card1 = new Label("-");
         centerContainer.getChildren().add(this.Card1);
+        this.Card1.setPrefSize(100, 30);
+        this.Card1.setFont(javafx.scene.text.Font.font(20));
 
-        this.Card2 = new Label("B2");
+        this.Card2 = new Label("-");
         centerContainer.getChildren().add(this.Card2);
+        this.Card2.setPrefSize(100, 30);
+        this.Card2.setFont(javafx.scene.text.Font.font(20));
 
-        this.Card3 = new Label("C3");
+        this.Card3 = new Label("-");
         centerContainer.getChildren().add(this.Card3);
+        this.Card3.setPrefSize(100, 30);
+        this.Card3.setFont(javafx.scene.text.Font.font(20));
 
-        this.Card4 = new Label("D4");
+        this.Card4 = new Label("-");
         centerContainer.getChildren().add(this.Card4);
+        this.Card4.setPrefSize(100, 30);
+        this.Card4.setFont(javafx.scene.text.Font.font(20));
 
-        this.Card5 = new Label("E5");
+        this.Card5 = new Label("-");
         centerContainer.getChildren().add(this.Card5);
+        this.Card5.setPrefSize(100, 30);
+        this.Card5.setFont(javafx.scene.text.Font.font(20));
 
         GridPane bottomGridPane = new GridPane();
         rootNode.setBottom(bottomGridPane);
@@ -85,22 +94,22 @@ public class MainWindow extends Application{
         bottomGridPane.setConstraints(checkButton, 0, 1);
 
         HBox heartsBox = new HBox();
-        heartsBox.setMinSize(200, 0);
+        //heartsBox.setMinSize(200, 0);
         bottomGridPane.getChildren().add(heartsBox);
         bottomGridPane.setConstraints(heartsBox, 1, 0);
 
         HBox queenOfSpadesBox = new HBox();
-        queenOfSpadesBox.setMinSize(200, 0);
+        //queenOfSpadesBox.setMinSize(200, 0);
         bottomGridPane.getChildren().add(queenOfSpadesBox);
         bottomGridPane.setConstraints(queenOfSpadesBox, 1, 1);
 
         HBox sumOfFacesBox = new HBox();
-        sumOfFacesBox.setMinSize(200, 0);
+        //sumOfFacesBox.setMinSize(200, 0);
         bottomGridPane.getChildren().add(sumOfFacesBox);
         bottomGridPane.setConstraints(sumOfFacesBox, 2, 0);
 
         HBox flushBox = new HBox();
-        flushBox.setMinSize(200, 0);
+        //flushBox.setMinSize(200, 0);  
         bottomGridPane.getChildren().add(flushBox);
         bottomGridPane.setConstraints(flushBox, 2, 1);
 
@@ -108,21 +117,29 @@ public class MainWindow extends Application{
         this.Hearts = new Label("-");
         heartsBox.getChildren().add(heartsLabel);
         heartsBox.getChildren().add(this.Hearts);
+        this.Hearts.setFont(javafx.scene.text.Font.font(20));
+        heartsLabel.setFont(javafx.scene.text.Font.font(20));
 
         Label queenOfSpadesLabel = new Label("Queen of Spades: ");
         this.QueenOfSpades = new Label("-");
         queenOfSpadesBox.getChildren().add(queenOfSpadesLabel);
         queenOfSpadesBox.getChildren().add(this.QueenOfSpades);
+        this.QueenOfSpades.setFont(javafx.scene.text.Font.font(20));
+        queenOfSpadesLabel.setFont(javafx.scene.text.Font.font(20));
 
         Label sumOfFacesLabel = new Label("Sum of Faces: ");
         this.SumOfFaces = new Label("-");
         sumOfFacesBox.getChildren().add(sumOfFacesLabel);
         sumOfFacesBox.getChildren().add(this.SumOfFaces);
+        this.SumOfFaces.setFont(javafx.scene.text.Font.font(20));
+        sumOfFacesLabel.setFont(javafx.scene.text.Font.font(20));
 
         Label flushLabel = new Label("Flush: ");
         this.Flush = new Label("-");
         flushBox.getChildren().add(flushLabel);
         flushBox.getChildren().add(this.Flush);
+        this.Flush.setFont(javafx.scene.text.Font.font(20));
+        flushLabel.setFont(javafx.scene.text.Font.font(20));
 
         stage.setScene(new Scene(rootNode, 800, 600));
         stage.setTitle("Card Game");
@@ -135,19 +152,19 @@ public class MainWindow extends Application{
 
     public void setCard(PlayingCard card, int index) {
         switch(index) {
-            case 1:
+            case 0:
                 this.Card1.setText(card.getAsString());
                 break;
-            case 2:
+            case 1:
                 this.Card2.setText(card.getAsString());
                 break;
-            case 3:
+            case 2:
                 this.Card3.setText(card.getAsString());
                 break;
-            case 4:
+            case 3:
                 this.Card4.setText(card.getAsString());
                 break;
-            case 5:
+            case 4:
                 this.Card5.setText(card.getAsString());
                 break;
         }
